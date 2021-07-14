@@ -20,20 +20,15 @@ header{
 }
 
 .header-page{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    padding:67px 141px 86px 156px;
+    display: flex;
+    padding:67px 140px 86px 140px;
     margin: 0 auto;
+    justify-content: center;
 
 }
 
-.heading-banner{
-    width: 556px;
-    height: 438px;
-}
-
-.heading-banner img{
-    width: 100%;
+.heading{
+    margin: 0 102px 0 50px;
 }
 
 .heading .title{
@@ -41,7 +36,7 @@ header{
     width: 485px;
     font-size: 64px;
     line-height: 80px;
-    margin: 0 102px 0 0;
+
 }
 
 .heading button{
@@ -60,9 +55,27 @@ header{
 
 }
 
+.heading-banner{
+    width: 556px;
+    height: 438px;
+}
+
+.heading-banner img{
+    width: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
 .fa-arrow-right{
     color: #FFFFFF;
     margin-left: 8px;
+}
+
+/* ---------------
+animation
+------------------ */
+
+header:hover .heading-banner > img{
+    transform: rotate(180deg);
 }
 
 /* --------------
@@ -88,8 +101,6 @@ player panel
     background-color: #FFFFFF;
     box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.15);
     margin: 13.5px 30px 13.5px 0px;
-
-
 }
 
 .player-detail{
@@ -114,6 +125,68 @@ player panel
     font-weight: 400;
     line-height: 26px;
 }
+
+/* -------------------
+bonous-- part
+--------------------- */
+
+/* ------------------
+match bonus
+--------------------- */
+
+.match{
+    width: 1050px;
+    height: 300px;
+    margin: 165px auto; 
+    background-color: rgb(246, 248, 248);
+    border-radius: 5px;
+    box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.15);
+}
+
+.match-info{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-self: center;
+    justify-content: center;
+}
+
+.match-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.score-board{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+}
+
+.score-board h1{
+    text-align: center;
+}
+
+.score-board img{
+    width: 60px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.match-highlights{
+    width: 500px;
+    height: 300px;
+    margin: 0 auto;
+
+}
+
+.match-info .match-highlights video{
+    width: 100%;
+    padding-top: 9px;
+    
+}
+
 
 /* -------------------
 footer
@@ -153,66 +226,6 @@ footer{
     margin: 0 auto;
 }
 
-/* -------------------
-bonous-- part
---------------------- */
-
-/* ------------------
-match bonus
---------------------- */
-
-.match{
-    width: 1050px;
-    height: 300px;
-    margin: 165px auto; 
-    background-color: rgb(246, 248, 248);
-    border-radius: 5px;
-    box-shadow: 0px 10px 20px 10px rgba(0, 0, 0, 0.15);
-}
-
-.match-info{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    align-self: center;
-    justify-content: center;
-}
-
-.match-details{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.score-board{
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    align-items: center;
-}
-
-.score-board h1{
-    text-align: center;
-}
-
-.score-board img{
-    width: 60px;
-    height: 40px;
-    margin: 0 auto;
-}
-
-.match-highlights{
-    width: 500px;
-    height: 300px;
-    margin: 0 auto;
-
-}
-
-.match-info .match-highlights video{
-    width: 100%;
-    padding-top: 9px;
-    
-}
 
 
 /* --------------------
@@ -221,9 +234,13 @@ media query ------ mobile
 
 @media only screen and (max-width: 682px) {
 
+    /* common stlyes */
+
     body{
-        margin: 0;
+        width: 100%;
     }
+
+    /* header */
 
     header{
         width: 100%;
@@ -231,27 +248,98 @@ media query ------ mobile
     }
 
     .header-page{
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        padding-left: 16px;
-        align-items: center;
-    
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .heading-banner{
+        max-width: 90%;
+        margin: 50px auto;
     }
 
     .heading-banner img{
-        margin-top: 50px;
-        width: 90%;
+        margin: 50px auto;
+        max-width: 90%;
         height: 260px;
-        justify-content: space-between;
     }
     
     .heading .title{
-        color: #FFFFFF;
         width: 278px;
         height: 138px;
         font-size: 36px;
         line-height: 50px;
     }
 
+
+    /* main */
+    /* players */
     
+    .player-panel{
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .players{
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .player{
+        margin: 13.5px auto;
+    }
+
+
+    /* bonus */
+
+    .match{
+        width: 90%;
+        height: 100%;
+        padding-bottom: 25px;
+    }
+
+    .match-info{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    
+    .match-details{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .score-board{
+        width: 90%;
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    .match-highlights{
+        width: 90%;    
+    }
+    
+    .match-info .match-highlights video{
+        width: 100%;
+        padding-top: 9px;        
+    }
+
+
+    /* footer */
+    footer{
+        max-width: 100%;
+        height: 100%;
+        margin: 100px auto;
+    }
+
+    .footer .logo img{
+        width: 85%;
+        height: 100%;
+        margin: 0 auto;
+    }
+
+    .social-media{
+        margin: 20px auto;
+    }
+  
 }
