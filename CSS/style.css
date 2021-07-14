@@ -21,14 +21,14 @@ header{
 
 .header-page{
     display: flex;
-    padding:67px 140px 86px 140px;
+    padding:67px 140px 86px 100px;
     margin: 0 auto;
     justify-content: center;
 
 }
 
 .heading{
-    margin: 0 102px 0 50px;
+    margin: 0px 102px 0px 50px;
 }
 
 .heading .title{
